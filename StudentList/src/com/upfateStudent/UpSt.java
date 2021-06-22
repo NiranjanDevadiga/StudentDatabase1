@@ -1,3 +1,4 @@
+// page 17--- this class take the data from updatesrvlet and update the data to the dtabase
 package com.upfateStudent;
 
 import java.sql.Connection;

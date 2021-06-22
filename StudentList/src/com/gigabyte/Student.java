@@ -1,3 +1,4 @@
+// page 4---- used to intialize--- student bean
 package com.gigabyte;
 
 public class Student 

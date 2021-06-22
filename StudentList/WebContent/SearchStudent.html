@@ -1,3 +1,4 @@
+<!-- page 18--- this button takes the id from the user to search the student -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,12 +7,12 @@
 </head>
 <body>
 <form action="SearchServlet">
-       Id : <input type="number" name="id"><br>
-       <input type="submit" value="Search the student">
+       Id : <input type="number" name="id"><br> <!-- it takes the student id -->
+       <input type="submit" value="Search the student"><!--  once we submit the id, id will pass to the searchservlet -->
 </form>
 <br>
 <form action="StudentServlet">
-      <input type="submit" value="return to student details">
+      <input type="submit" value="return to student details"> <!-- this button take us back to the student list -->
 </form>
 </body>
 </html>

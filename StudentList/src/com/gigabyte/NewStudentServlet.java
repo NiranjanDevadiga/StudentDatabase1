@@ -1,3 +1,4 @@
+// page 7 -- take the new students details coming from new student html page
 package com.gigabyte;
 
 import java.io.IOException;
@@ -31,19 +32,19 @@ public class NewStudentServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id= Integer.parseInt( request.getParameter("id")) ;
-		String fname=request.getParameter("fname");
-		String lname=request.getParameter("lname");
-		String email=request.getParameter("email");
-		Student newStudent=new Student(id,fname,lname,email);
-		AddStudent obj=new AddStudent();
+		int id= Integer.parseInt( request.getParameter("id")) ; // it will take the student id from new student html page
+		String fname=request.getParameter("fname");// it will take the student fname from new student html page
+		String lname=request.getParameter("lname");// it will take the student lname from new student html page
+		String email=request.getParameter("email");// it will take the student emailid from new student html page
+		Student newStudent=new Student(id,fname,lname,email); // we will pass all the data to student beans for initializing
+		AddStudent obj=new AddStudent(); // here we created the object of the add student class
 		try {
-			obj.addToDb(newStudent);
+			obj.addToDb(newStudent); // addtoDb method of addstudent class will add the student data to the data base-- page 8
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		RequestDispatcher disp=request.getRequestDispatcher("/NewStudent.html");
+		RequestDispatcher disp=request.getRequestDispatcher("/NewStudent.html"); // once we add the new student data to the database we transfer control to the new student html page
 		disp.forward(request, response);
 		
 	}

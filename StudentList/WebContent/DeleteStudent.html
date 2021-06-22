@@ -1,3 +1,4 @@
+<!-- page 9 -- in this page we have to enter the student, we want to delete the record -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,12 +12,12 @@
 <h6>enter the student id to delete</h6>
 <br>
 <form action="DeleteStudentServlet">
-       Id : <input type="number" name="id"><br>
-       <input type="submit" value="delete the student">
+       Id : <input type="number" name="id"><br> <!-- enter the student, we want to delete the record -->
+       <input type="submit" value="delete the student"><!-- once we submit the id it will pass to the delete student servlet page -->
 </form>
 <br>
 <form action="StudentServlet">
-      <input type="submit" value="return to student details">
+      <input type="submit" value="return to student details"> <!-- after deleting the student record if we press this button it will take us back to the student details page -->
 </form>
 
 </body>

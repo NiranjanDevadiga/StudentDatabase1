@@ -1,3 +1,4 @@
+// page 10--- it will take student id from delete student html page and delete the student record in database
 package com.deletestudent;
 
 import java.io.IOException;
@@ -30,11 +31,11 @@ public class DeleteStudentServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id=Integer.parseInt(request.getParameter("id"));
-		DeleteStudent ob=new DeleteStudent();
+		int id=Integer.parseInt(request.getParameter("id"));//it will take student id from delete student html page
+		DeleteStudent ob=new DeleteStudent(); // create the object of the delete student class
 		PrintWriter out=response.getWriter();
 		try {
-			ob.deletStudent(id);
+			ob.deletStudent(id); // pass the id to the deleteStudent id method og delete student class to delete the data from the student database
 		} catch (ClassNotFoundException e) {
 			out.println("id is not found");
 			
@@ -42,7 +43,7 @@ public class DeleteStudentServlet extends HttpServlet {
 			out.println("id is not found");
 			
 		}
-		RequestDispatcher disp=request.getRequestDispatcher("/DeleteStudent.html");
+		RequestDispatcher disp=request.getRequestDispatcher("/DeleteStudent.html");// oce we delete the record from the database transfer the control to the deletestudent html page 
 		disp.forward(request, response);
 	}
 
